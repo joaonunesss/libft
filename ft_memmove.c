@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 11:07:45 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/14 11:53:10 by jmarinho         ###   ########.fr       */
+/*   Created: 2023/04/14 09:43:06 by jmarinho          #+#    #+#             */
+/*   Updated: 2023/04/14 15:36:59 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	unsigned char	*d;
+	unsigned char	*temp;
+	const char		*s;
+	size_t				i;
 
 	i = 0;
-	if (dest == NULL || src == NULL || size <= 0)
-		return (0);
-	while (src[i] != '\0' &&  i + 1 < size) // i + um garante que ha espaco na dest para receber src
+	d = dest;
+	s = src;
+	temp = malloc(sizeof(char) * n);
+	if (temp == NULL)
+		return (NULL);
+	if (d == NULL || s == NULL || n == 0)
+		return (NULL);
+	if (dest = src || dest[n] = src[n])
+		return (NULL);
+	
+	while (n > 0)
 	{
-		dest[i] = src[i];
+		temp[i] = s[i];
+		d[i] = temp[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (i);
+	free(temp);
+	return (dest);
 }

@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 11:07:45 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/14 11:53:10 by jmarinho         ###   ########.fr       */
+/*   Created: 2023/04/13 14:49:07 by jmarinho          #+#    #+#             */
+/*   Updated: 2023/04/13 15:24:10 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
+	unsigned char	*p;
 
-	i = 0;
-	if (dest == NULL || src == NULL || size <= 0)
-		return (0);
-	while (src[i] != '\0' &&  i + 1 < size) // i + um garante que ha espaco na dest para receber src
+	p = s;
+	while (n > 0)
 	{
-		dest[i] = src[i];
-		i++;
+		p[n - 1] = c;
+		n--;
 	}
-	dest[i] = '\0';
-	return (i);
+	return (s);
 }
