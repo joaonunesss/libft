@@ -6,7 +6,7 @@
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:13:38 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/18 15:41:50 by jmarinho         ###   ########.fr       */
+/*   Updated: 2023/04/18 17:37:40 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t nbrelem, size_t elemsize)
 	size_t	totalsize;
 
 	totalsize = nbrelem * elemsize;
-	mem =  malloc(totalsize);
+	mem = malloc(totalsize);
 	if (mem == NULL)
 		return (NULL);
 	ft_bzero(mem, totalsize);

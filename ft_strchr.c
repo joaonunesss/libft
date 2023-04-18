@@ -6,7 +6,7 @@
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:14:43 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/18 16:04:08 by jmarinho         ###   ########.fr       */
+/*   Updated: 2023/04/18 17:37:20 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	*str;
 
 	i = 0;

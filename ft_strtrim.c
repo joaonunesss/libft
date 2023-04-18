@@ -6,7 +6,7 @@
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:16:51 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/18 16:57:41 by jmarinho         ###   ########.fr       */
+/*   Updated: 2023/04/18 17:38:22 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;
-	size_t		k;
-	size_t		i;
+	size_t	k;
+	size_t	i;
 
 	i = 0;
 	k = 0;
