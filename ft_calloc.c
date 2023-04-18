@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/18 15:13:38 by jmarinho          #+#    #+#             */
+/*   Updated: 2023/04/18 15:41:50 by jmarinho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_calloc(size_t nbrelem, size_t elemsize)
 {
-	void	*mem; //pq void?
+	void	*mem;
 	size_t	totalsize;
 
 	totalsize = nbrelem * elemsize;
-	mem = (int *) malloc(totalsize);
-	if (mem == '\0')
+	mem =  malloc(totalsize);
+	if (mem == NULL)
 		return (NULL);
-	mem = ft_bzero(mem, totalsize);
+	ft_bzero(mem, totalsize);
 	return (mem);
 }
