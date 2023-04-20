@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 11:55:08 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/20 13:11:29 by jmarinho         ###   ########.fr       */
+/*   Created: 2023/04/20 11:21:20 by jmarinho          #+#    #+#             */
+/*   Updated: 2023/04/20 11:50:27 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*trim;
-	size_t	i;
-	size_t	size;
+	size_t	final_len;
+	char	*final;
 
-	i = 0;
-	size = ft_strlen(s1);
-	while (i <= size && ft_strchr(set, s1[i]))
-		i++;
-	if (i > size)
-		return (ft_strdup(s1 + size));
-	while (size >= 0 && ft_strchr(set, s1[size - 1]))
-		size--;
-	trim = malloc(sizeof(char) * ((size + 1) - i));
-	if (trim == NULL)
+	final_len = ft_strlen(s1) + ft_strlen(s2);
+	final = malloc(sizeof(char) * final_len + 1);
+	if (final == NULL)
 		return (NULL);
-	ft_strlcpy(trim, &s1[i], size - i + 1);
-	return (trim);
+	ft_strlcpy(final, s1, ft_strlen(s1) + 1);
+	ft_strlcat(final + ft_strlen(s1), s2, ft_strlen(s2) + 1);
+	return (final);
 }

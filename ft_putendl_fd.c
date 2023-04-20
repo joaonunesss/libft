@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 11:55:08 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/20 13:11:29 by jmarinho         ###   ########.fr       */
+/*   Created: 2023/04/20 13:58:51 by jmarinho          #+#    #+#             */
+/*   Updated: 2023/04/20 14:26:03 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*trim;
-	size_t	i;
-	size_t	size;
-
-	i = 0;
-	size = ft_strlen(s1);
-	while (i <= size && ft_strchr(set, s1[i]))
-		i++;
-	if (i > size)
-		return (ft_strdup(s1 + size));
-	while (size >= 0 && ft_strchr(set, s1[size - 1]))
-		size--;
-	trim = malloc(sizeof(char) * ((size + 1) - i));
-	if (trim == NULL)
-		return (NULL);
-	ft_strlcpy(trim, &s1[i], size - i + 1);
-	return (trim);
+	while (*s)
+	{	
+		write(fd, &*s, 1);
+		s++;
+	}
+	write(fd, "\n", 1);
 }
