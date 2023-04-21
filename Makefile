@@ -6,7 +6,7 @@
 #    By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 13:00:03 by jmarinho          #+#    #+#              #
-#    Updated: 2023/04/20 18:33:16 by jmarinho         ###   ########.fr        #
+#    Updated: 2023/04/21 12:33:23 by jmarinho         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,28 +18,30 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isalnum.c ft_isprint.c \
 	ft_strtrim.c ft_putnbr_fd.c ft_putendl_fd.c ft_putstr_fd.c \
 	ft_putchar_fd.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_split.c \
 
+BONUS = 
+
 NAME = libft.a
 OBJS = ${SRC:.c=.o}
-HEADER = libft.h
+BONUS_OBJS = ${BONUS:.c=.o}
 RM = rm -f
 FLAGS = -Wall -Wextra -Werror
 
 all: ${NAME}
-	
+
+$(NAME): ${OBJS}
+	@ar rcs ${NAME} ${OBJS}
 .c.o:
 	@cc ${FLAGS} -c $< -o ${<:.c=.o}
 
-$(NAME): ${OBJS}
-	@ar rcs ${NAME} ${OBJS} ${HEADER}
+clean:
+	@${RM} ${OBJS} ${BONUS_OBJS}
 
-fclean:
-	@${RM} *.a *.o *~ run
+fclean: clean 
+	@${RM} ${NAME} *~
 
-re: clean all
+re: fclean all
 
-run: all
-	@cc ${FLAGS} -o run main.c ${NAME}
-	@${RM} *.a *.o *~
-	@./run
+bonus: $(OBJS) $(BONUS_OBJS)
+	@ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
 
-.PHONY: all clean re
+.PHONY: all clean fclean re run bonus runbonus
