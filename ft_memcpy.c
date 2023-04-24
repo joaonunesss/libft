@@ -6,7 +6,7 @@
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:41:13 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/18 15:26:43 by jmarinho         ###   ########.fr       */
+/*   Updated: 2023/04/24 13:30:04 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	d = dest;
 	s = src;
 	i = 0;
+	if (!dest && !src)
+		return (NULL);
+	if (n == 0)
+		return (dest);
 	while (i < n)
 	{
 		d[i] = s[i];

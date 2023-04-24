@@ -6,7 +6,7 @@
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:43:06 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/19 11:34:35 by jmarinho         ###   ########.fr       */
+/*   Updated: 2023/04/24 14:52:53 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	d = dest;
 	s = src;
+	if (!dest && !src)
+                return (NULL);
+        if (n == 0)
+                return (dest);
 	if (d > s)
 	{
 		while (n > 0)

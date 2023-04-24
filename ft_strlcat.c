@@ -6,7 +6,7 @@
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:15:10 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/18 16:45:34 by jmarinho         ###   ########.fr       */
+/*   Updated: 2023/04/24 14:31:55 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	destlen = ft_strlen(dest);
 	totallen = ft_strlen(src) + destlen;
 	orgdest = destlen;
+	if ((size == 0) && (src == NULL))
+		return (0);
 	if (size > 0 && destlen < (size - 1))
 	{
 		i = 0;
