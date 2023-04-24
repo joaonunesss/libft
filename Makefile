@@ -6,7 +6,7 @@
 #    By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 13:00:03 by jmarinho          #+#    #+#              #
-#    Updated: 2023/04/24 13:23:30 by jmarinho         ###   ########.fr        #
+#    Updated: 2023/04/24 17:17:54 by jmarinho         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,4 @@ re: fclean all
 bonus: $(OBJS) $(BONUS_OBJS)
 	@ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
 
-so:
-	cc -nostartfiles -fPIC $(FLAGS) $(SRC) $(BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
-
-.PHONY: all clean fclean re run bonus runbonus
+.PHONY: all clean fclean re bonus

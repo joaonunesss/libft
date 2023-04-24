@@ -6,7 +6,7 @@
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:55:08 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/20 13:11:29 by jmarinho         ###   ########.fr       */
+/*   Updated: 2023/04/24 20:47:53 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(s1 + size));
 	while (size >= 0 && ft_strchr(set, s1[size - 1]))
 		size--;
-	trim = malloc(sizeof(char) * ((size + 1) - i));
+	trim = malloc(sizeof(char) * (size - i + 1));
 	if (trim == NULL)
 		return (NULL);
 	ft_strlcpy(trim, &s1[i], size - i + 1);

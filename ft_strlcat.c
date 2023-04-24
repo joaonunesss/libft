@@ -6,7 +6,7 @@
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:15:10 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/24 14:31:55 by jmarinho         ###   ########.fr       */
+/*   Updated: 2023/04/24 19:07:22 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	orgdest = destlen;
 	if ((size == 0) && (src == NULL))
 		return (0);
-	if (size > 0 && destlen < (size - 1))
+	if (size > 0)
 	{
 		i = 0;
 		while (destlen < (size - 1) && src[i] != '\0')
@@ -35,7 +35,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		}
 		dest[destlen] = '\0';
 	}
-	if (orgdest > size)
+	if (orgdest >= size)
 		return (size + ft_strlen(src));
 	return (totallen);
 }
