@@ -6,7 +6,7 @@
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:29:18 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/24 11:29:26 by jmarinho         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:35:31 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,4 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 		return ;
 	del(lst->content);
 	free(lst);
-	lst = NULL;
 }

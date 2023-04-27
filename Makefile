@@ -6,7 +6,7 @@
 #    By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 13:00:03 by jmarinho          #+#    #+#              #
-#    Updated: 2023/04/24 17:17:54 by jmarinho         ###   ########.fr        #
+#    Updated: 2023/04/26 15:59:06 by jmarinho         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,13 @@ BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstadd_back.c \
 	ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c \
 
 NAME = libft.a
+
 OBJS = ${SRC:.c=.o}
+
 BONUS_OBJS = ${BONUS:.c=.o}
+
 RM = rm -f
+
 FLAGS = -Wall -Wextra -Werror
 
 all: ${NAME}

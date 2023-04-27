@@ -6,7 +6,7 @@
 /*   By: jmarinho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:14:57 by jmarinho          #+#    #+#             */
-/*   Updated: 2023/04/20 19:04:40 by jmarinho         ###   ########.fr       */
+/*   Updated: 2023/04/26 13:42:21 by jmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,21 +55,22 @@ char	**ft_memory_allocation(char const *s, char c, int count_words)
 	return (big_array);
 }
 
-char	*ft_inside_the_box(char const *s, int len)
+char	*ft_inside_the_box(char const *s, int i, int len)
 {
 	char	*str;
-	int		i;
+	int		j;
 
-	i = 0;
+	j = 0;
 	str = malloc(sizeof(char) * len + 1);
 	if (str == NULL)
 		return (NULL);
-	while (i < len)
+	while (j < len)
 	{
-		str[i] = s[i];
+		str[j] = s[i];
 		i++;
+		j++;
 	}
-	str[i] = '\0';
+	str[j] = '\0';
 	return (str);
 }
 
@@ -94,7 +95,7 @@ char	**ft_split(char const *s, char c)
 		word_len = 0;
 		while (s[i + word_len] != '\0' && s[i + word_len] != c)
 			word_len++;
-		big_array[k] = ft_inside_the_box(&s[i], word_len);
+		big_array[k] = ft_inside_the_box(s, i, word_len);
 		i = i + word_len;
 		k++;
 	}
